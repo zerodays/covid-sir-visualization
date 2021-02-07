@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core';
 import { colors } from '@material-ui/core';
 import VisualizationField from './VisualizationField';
+import HelpCard from './HelpCard';
 
 const RECT_SIZE = 3;
 
@@ -10,6 +11,22 @@ const styles = theme => ({
     overflow: 'hidden',
     height: '100vh',
     width: '100vw',
+    position: 'relative',
+  },
+  fieldContainer: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+  },
+  helpCardContainer: {
+    position: 'absolute',
+    top: 16,
+    left: 16,
+    opacity: 0.6,
+    transition: 'opacity 200ms ease-in-out',
+    '&:hover': {
+      opacity: 1,
+    },
   },
 });
 
@@ -35,8 +52,6 @@ class App extends Component {
       widthPoints: wPoints,
       heightPoints: hPoints,
     });
-
-    console.log(wPoints, hPoints);
   }
 
   componentWillUnmount() {
@@ -71,21 +86,27 @@ class App extends Component {
   render() {
     const {classes} = this.props;
     return <div className={classes.root} onKeyDown={this.iterateWithSeed} onWheel={this.onScroll}>
-      {
-        this.state.widthPoints == null ? null :
-          <VisualizationField
-            ref={this.fieldRef}
-            widthPoints={this.state.widthPoints}
-            heightPoints={this.state.heightPoints}
-            rectSize={RECT_SIZE}
-            susceptibleColor={colors.grey[200]}
-            infectedColor={colors.red[400]}
-            removedColor={colors.blue[400]}
-            gamma={0.1}
-            betta={0.8}
-            zoom={this.state.zoom}
-          />
-      }
+      <div className={classes.fieldContainer}>
+        {
+          this.state.widthPoints == null ? null :
+            <VisualizationField
+              ref={this.fieldRef}
+              widthPoints={this.state.widthPoints}
+              heightPoints={this.state.heightPoints}
+              rectSize={RECT_SIZE}
+              susceptibleColor={colors.grey[200]}
+              infectedColor={colors.red[400]}
+              removedColor={colors.blue[400]}
+              gamma={0.1}
+              betta={0.8}
+              zoom={this.state.zoom}
+            />
+        }
+      </div>
+
+      <div className={classes.helpCardContainer}>
+        <HelpCard/>
+      </div>
     </div>;
   }
 }
