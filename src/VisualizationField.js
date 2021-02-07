@@ -52,16 +52,16 @@ class VisualizationField extends Component {
   };
 
   getNewStateForPoint = (field, x, y) => {
-    // TODO: this is a dummy logic to test the performance
     if (field[y][x] === REMOVED) return REMOVED;
+
+    if (field[y][x] === INFECTED) {
+      if (Math.random() < this.props.gamma) return REMOVED;
+      else return INFECTED;
+    }
 
     let infectedNeighbours = this.countInfectedNeighbours(field, x, y);
 
-    if (field[y][x] === INFECTED) {
-      return infectedNeighbours === 8 ? REMOVED : INFECTED;
-    }
-
-    if (infectedNeighbours > 0 && infectedNeighbours <= 3) return INFECTED;
+    if (Math.random() < infectedNeighbours * this.props.betta/8) return INFECTED;
     return SUSCEPTIBLE;
   };
 

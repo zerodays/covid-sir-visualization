@@ -3,7 +3,7 @@ import { withStyles } from '@material-ui/core';
 import { colors } from '@material-ui/core';
 import VisualizationField from './VisualizationField';
 
-const RECT_SIZE = 2;
+const RECT_SIZE = 3;
 
 const styles = theme => ({
   root: {
@@ -48,7 +48,7 @@ class App extends Component {
 
     const field = this.fieldRef.current;
 
-    if (!this.state.seedCalled || true) {
+    if (!this.state.seedCalled) {
       const w = document.body.clientWidth;
       const h = document.body.clientHeight;
 
@@ -81,8 +81,8 @@ class App extends Component {
             susceptibleColor={colors.grey[200]}
             infectedColor={colors.red[400]}
             removedColor={colors.blue[400]}
-            gamma={1}
-            betta={1}
+            gamma={0.1}
+            betta={0.8}
             zoom={this.state.zoom}
           />
       }
