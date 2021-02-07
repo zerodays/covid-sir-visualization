@@ -3,6 +3,7 @@ import { withStyles } from '@material-ui/core';
 import { colors } from '@material-ui/core';
 import VisualizationField from './VisualizationField';
 import HelpCard from './HelpCard';
+import ControlPanel from './ControlPanel';
 
 const RECT_SIZE = 3;
 
@@ -28,15 +29,28 @@ const styles = theme => ({
       opacity: 1,
     },
   },
+  controlPanelContainer: {
+    position: 'absolute',
+    right: 16,
+    top: 16,
+    opacity: 0.6,
+    transition: 'opacity 200ms ease-in-out',
+    '&:hover': {
+      opacity: 1,
+    },
+  },
 });
 
 class App extends Component {
   fieldRef = React.createRef();
   state = {
     seedCalled: false,
+    day: 0,
     zoom: 1.0,
     widthPoints: null,
     heightPoints: null,
+    betta: 0.8,
+    gamma: 0.2,
   };
 
   componentDidMount() {
@@ -70,17 +84,27 @@ class App extends Component {
       const xPosition = Math.ceil(w / RECT_SIZE / 2);
       const yPosition = Math.ceil(h / RECT_SIZE / 2);
 
-      field.addSeed(xPosition, yPosition); // TODO: seed position
+      field.addSeed(xPosition, yPosition);
       this.setState({seedCalled: true});
     }
 
     field.tick();
+    this.setState(prevState => ({day: prevState.day + 1}));
   };
 
   onScroll = (e) => {
     let newZoom = this.state.zoom - e.deltaY / 1000;
     newZoom = Math.min(3, Math.max(1, newZoom));
     this.setState({zoom: newZoom});
+  };
+
+  onChangeBetta = value => this.setState({betta: value});
+  onChangeGamma = value => this.setState({gamma: value});
+  onReset = () => {
+    this.setState({
+      seedCalled: false,
+      day: 0,
+    }, this.fieldRef.current.reset);
   };
 
   render() {
@@ -97,8 +121,8 @@ class App extends Component {
               susceptibleColor={colors.grey[200]}
               infectedColor={colors.red[400]}
               removedColor={colors.blue[400]}
-              gamma={0.1}
-              betta={0.8}
+              betta={this.state.betta}
+              gamma={this.state.gamma}
               zoom={this.state.zoom}
             />
         }
@@ -106,6 +130,16 @@ class App extends Component {
 
       <div className={classes.helpCardContainer}>
         <HelpCard/>
+      </div>
+
+      <div className={classes.controlPanelContainer}>
+        <ControlPanel betta={this.state.betta}
+                      gamma={this.state.gamma}
+                      day={this.state.day}
+                      onChangeBetta={this.onChangeBetta}
+                      onChangeGamma={this.onChangeGamma}
+                      onReset={this.onReset}
+        />
       </div>
     </div>;
   }

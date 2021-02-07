@@ -14,7 +14,14 @@ const styles = theme => ({
     borderStyle: 'solid',
     paddingX: 8,
     paddingY: 2,
-  }
+  },
+  expandable: {
+    maxHeight: 20,
+    transition: 'max-height 300ms ease-out',
+    '&:hover': {
+      maxHeight: 380,
+    },
+  },
 });
 
 class HelpCard extends Component {
@@ -22,11 +29,11 @@ class HelpCard extends Component {
     const {classes} = this.props;
 
     return <Card className={classes.root}>
-      <Box p={1}>
+      <Box p={1} className={classes.expandable}>
         <Grid container direction='row' spacing={1}>
           <Grid item xs={12}>
             <Typography variant='subtitle2'>
-              About
+              Help
             </Typography>
           </Grid>
           <Grid item xs={12}>
@@ -42,13 +49,22 @@ class HelpCard extends Component {
             <Typography variant='caption'>
               <ul>
                 <li>Press <span className={classes.key}>Enter</span> to move to the next day. First infection will
-                  appear in the center of the screen on <b>day 1</b>.</li>
+                  appear in the center of the screen on <b>day 1</b>.
+                </li>
                 <li><span className={classes.key}>Scroll</span> to zoom in and out of the visualization.</li>
                 <li>Use <b>control panel on the right</b> to adjust simulation parameters.</li>
                 <li>Hover over the <b>graph icon in the left bottom conner</b> to view number of
                   susceptible/infected/removed individuals over time.
                 </li>
               </ul>
+            </Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <Typography variant='subtitle2'>
+              Legend
+            </Typography>
+            <Typography variant='caption'>
+              TODO
             </Typography>
           </Grid>
 

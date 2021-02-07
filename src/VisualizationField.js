@@ -110,7 +110,6 @@ class VisualizationField extends Component {
     this.paintRect(x, y, field, this.getCanvasContext());
   };
 
-  // TODO: call reset from outside
   reset = () => {
     const {widthPoints, heightPoints, rectSize} = this.props;
     field = this.emptyField();
