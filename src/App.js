@@ -63,7 +63,7 @@ class App extends Component {
   };
 
   onScroll = (e) => {
-    let newZoom = this.state.zoom + e.deltaY / 1000;
+    let newZoom = this.state.zoom - e.deltaY / 1000;
     newZoom = Math.min(3, Math.max(1, newZoom));
     this.setState({zoom: newZoom});
   };
