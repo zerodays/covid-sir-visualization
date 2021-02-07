@@ -23,6 +23,8 @@ class App extends Component {
   };
 
   componentDidMount() {
+    document.addEventListener('keydown', this.iterateWithSeed);
+
     const w = document.body.clientWidth;
     const h = document.body.clientHeight;
 
@@ -37,9 +39,12 @@ class App extends Component {
     console.log(wPoints, hPoints);
   }
 
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.iterateWithSeed);
+  }
+
   iterateWithSeed = (e) => {
-    // console.log(e);
-    if (e.charCode !== 13) return;
+    if (e.keyCode !== 13) return;
 
     const field = this.fieldRef.current;
 
@@ -65,7 +70,7 @@ class App extends Component {
 
   render() {
     const {classes} = this.props;
-    return <div className={classes.root} onKeyPress={this.iterateWithSeed} tabIndex={'0'} onWheel={this.onScroll}>
+    return <div className={classes.root} onKeyDown={this.iterateWithSeed} onWheel={this.onScroll}>
       {
         this.state.widthPoints == null ? null :
           <VisualizationField
