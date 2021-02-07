@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Box, Card, Grid, Typography, withStyles } from '@material-ui/core';
 import { grey } from '@material-ui/core/colors';
+import PropTypes from 'prop-types';
 
 const styles = theme => ({
   root: {
@@ -19,8 +20,18 @@ const styles = theme => ({
     maxHeight: 20,
     transition: 'max-height 300ms ease-out',
     '&:hover': {
-      maxHeight: 380,
+      maxHeight: 490,
     },
+  },
+  legend: {
+    width: 12,
+    height: 12,
+    borderColor:  grey[700],
+    borderWidth: 1,
+    borderStyle: 'solid',
+    borderRadius: 2,
+    display: 'inline-block',
+    marginRight: 6,
   },
 });
 
@@ -63,15 +74,32 @@ class HelpCard extends Component {
             <Typography variant='subtitle2'>
               Legend
             </Typography>
+          </Grid>
+          <Grid item xs={12}>
             <Typography variant='caption'>
-              TODO
+              <span className={classes.legend} style={{backgroundColor: this.props.susceptibleColor}}/>Susceptible individuals.
             </Typography>
           </Grid>
-
+          <Grid item xs={12}>
+            <Typography variant='caption'>
+              <span className={classes.legend} style={{backgroundColor: this.props.infectedColor}}/>Infected individuals.
+            </Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <Typography variant='caption'>
+              <span className={classes.legend} style={{backgroundColor: this.props.removedColor}}/>Removed (deceased or immune) individuals.
+            </Typography>
+          </Grid>
         </Grid>
       </Box>
     </Card>;
   }
 }
+
+HelpCard.propTypes = {
+  infectedColor: PropTypes.string.isRequired,
+  susceptibleColor: PropTypes.string.isRequired,
+  removedColor: PropTypes.string.isRequired,
+};
 
 export default withStyles(styles)(HelpCard);

@@ -6,6 +6,9 @@ import HelpCard from './HelpCard';
 import ControlPanel from './ControlPanel';
 
 const RECT_SIZE = 3;
+const SUSCEPTIBLE_COLOR = colors.grey[200];
+const INFECTED_COLOR = colors.red[400];
+const REMOVED_COLOR = colors.blue[400];
 
 const styles = theme => ({
   root: {
@@ -118,9 +121,9 @@ class App extends Component {
               widthPoints={this.state.widthPoints}
               heightPoints={this.state.heightPoints}
               rectSize={RECT_SIZE}
-              susceptibleColor={colors.grey[200]}
-              infectedColor={colors.red[400]}
-              removedColor={colors.blue[400]}
+              susceptibleColor={SUSCEPTIBLE_COLOR}
+              infectedColor={INFECTED_COLOR}
+              removedColor={REMOVED_COLOR}
               betta={this.state.betta}
               gamma={this.state.gamma}
               zoom={this.state.zoom}
@@ -129,7 +132,11 @@ class App extends Component {
       </div>
 
       <div className={classes.helpCardContainer}>
-        <HelpCard/>
+        <HelpCard
+          susceptibleColor={SUSCEPTIBLE_COLOR}
+          infectedColor={INFECTED_COLOR}
+          removedColor={REMOVED_COLOR}
+        />
       </div>
 
       <div className={classes.controlPanelContainer}>
