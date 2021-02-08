@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="343f9ad1-8a44-48f3-b3c7-88e46b3564bc" name="Default Changelist" comment="render dummy visualization with zoom">
+    <list default="true" id="343f9ad1-8a44-48f3-b3c7-88e46b3564bc" name="Default Changelist" comment="update README.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
     </list>
@@ -29,9 +29,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
@@ -51,7 +57,9 @@
       <option name="presentableId" value="Default" />
       <updated>1612710020807</updated>
       <workItem from="1612710021847" duration="264000" />
-      <workItem from="1612710332794" duration="6827000" />
+      <workItem from="1612710332794" duration="13545000" />
+      <workItem from="1612764545512" duration="27000" />
+      <workItem from="1612764642156" duration="7000" />
     </task>
     <task id="LOCAL-00001" summary="render dummy visualization with zoom">
       <created>1612717165150</created>
@@ -60,7 +68,56 @@
       <option name="project" value="LOCAL" />
       <updated>1612717165150</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fix onkeypress focus issue">
+      <created>1612717338051</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1612717338051</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fix onkeypress focus issue">
+      <created>1612717408182</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1612717408182</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add true sir simulation">
+      <created>1612717886183</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1612717886183</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add help card">
+      <created>1612719611134</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1612719611134</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add control panel">
+      <created>1612721794988</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1612721794988</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add legend">
+      <created>1612722674110</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1612722674110</updated>
+    </task>
+    <task id="LOCAL-00008" summary="update README.md">
+      <created>1612764564884</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1612764564884</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -80,6 +137,23 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="render dummy visualization with zoom" />
-    <option name="LAST_COMMIT_MESSAGE" value="render dummy visualization with zoom" />
+    <MESSAGE value="fix onkeypress focus issue" />
+    <MESSAGE value="add true sir simulation" />
+    <MESSAGE value="add help card" />
+    <MESSAGE value="add control panel" />
+    <MESSAGE value="add legend" />
+    <MESSAGE value="update README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="update README.md" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/ControlPanel.js</url>
+          <line>33</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
