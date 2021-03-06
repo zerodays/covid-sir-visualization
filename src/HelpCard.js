@@ -49,7 +49,7 @@ class HelpCard extends Component {
           </Grid>
           <Grid item xs={12}>
             <Typography variant='caption'>
-              This is a simplified discrete representation of the epidemiological <a
+              This is a simplified discrete representation of the epidemiological (local) <a
               href={'https://en.m.wikipedia.org/wiki/Compartmental_models_in_epidemiology#The_SIR_model'}>SIR model</a>.
             </Typography>
           </Grid>

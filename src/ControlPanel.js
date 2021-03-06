@@ -56,12 +56,6 @@ class ControlPanel extends Component {
             </Box>
           </Grid>
           <Grid item xs={12}/>
-          <Grid item xs={12}>
-            <Typography variant='caption'>
-              TODO: table of sample values for covid, vaccinated population, flue etc.
-            </Typography>
-          </Grid>
-          <Grid item xs={12}/>
           <Grid item>
             <Button size='small' variant='raised' onClick={this.props.onReset} color='secondary'>
               Reset simulation
