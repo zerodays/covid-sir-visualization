@@ -1,6 +1,6 @@
 # SIR model visualization
 
-Simulation can be seen [here]().
+Demo can be seen [here](https://sir.zerodays.dev).
 
 To publish project to gh-pages, run
 
