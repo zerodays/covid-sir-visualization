@@ -4,6 +4,8 @@ import { colors } from '@material-ui/core';
 import VisualizationField from './VisualizationField';
 import HelpCard from './HelpCard';
 import ControlPanel from './ControlPanel';
+import ChartView from './ChartView';
+import { grey } from '@material-ui/core/colors';
 
 const RECT_SIZE = 3;
 const SUSCEPTIBLE_COLOR = colors.grey[200];
@@ -42,6 +44,16 @@ const styles = theme => ({
       opacity: 1,
     },
   },
+  chartViewContainer: {
+    position: 'absolute',
+    left: 16,
+    bottom: 16,
+    opacity: 0.6,
+    transition: 'opacity 200ms ease-in-out',
+    '&:hover': {
+      opacity: 1,
+    },
+  },
 });
 
 class App extends Component {
@@ -54,6 +66,9 @@ class App extends Component {
     heightPoints: null,
     betta: 0.8,
     gamma: 0.2,
+    dataS: [],
+    dataI: [],
+    dataR: [],
   };
 
   componentDidMount() {
@@ -91,8 +106,21 @@ class App extends Component {
       this.setState({seedCalled: true});
     }
 
-    field.tick();
-    this.setState(prevState => ({day: prevState.day + 1}));
+    const [s, i, r] = field.tick();
+
+    // refresh data every 21 days
+    if (this.state.day % 21 === 0) {
+      this.setState(prevState => ({
+        day: prevState.day + 1,
+        dataS: [...prevState.dataS, s],
+        dataI: [...prevState.dataI, i],
+        dataR: [...prevState.dataR, r],
+      }));
+    } else {
+      this.setState(prevState => ({
+        day: prevState.day + 1,
+      }));
+    }
   };
 
   onScroll = (e) => {
@@ -107,11 +135,15 @@ class App extends Component {
     this.setState({
       seedCalled: false,
       day: 0,
+      dataS: [],
+      dataI: [],
+      dataR: [],
     }, this.fieldRef.current.reset);
   };
 
   render() {
     const {classes} = this.props;
+
     return <div className={classes.root} onKeyDown={this.iterateWithSeed} onWheel={this.onScroll}>
       <div className={classes.fieldContainer}>
         {
@@ -146,6 +178,13 @@ class App extends Component {
                       onChangeBetta={this.onChangeBetta}
                       onChangeGamma={this.onChangeGamma}
                       onReset={this.onReset}
+        />
+      </div>
+
+      <div className={classes.chartViewContainer}>
+        <ChartView dataS={this.state.dataS}
+                   dataI={this.state.dataI}
+                   dataR={this.state.dataR}
         />
       </div>
     </div>;

@@ -61,7 +61,7 @@ class VisualizationField extends Component {
 
     let infectedNeighbours = this.countInfectedNeighbours(field, x, y);
 
-    if (Math.random() < infectedNeighbours * this.props.betta/8) return INFECTED;
+    if (Math.random() < infectedNeighbours * this.props.betta / 8) return INFECTED;
     return SUSCEPTIBLE;
   };
 
@@ -86,23 +86,42 @@ class VisualizationField extends Component {
     const {widthPoints, heightPoints} = this.props;
     let newField = this.emptyField();
 
+    // count each section
+    let s = 0;
+    let i = 0;
+    let r = 0;
+
+    // do the evolution
     for (let y = 0; y < heightPoints; y++) {
       for (let x = 0; x < widthPoints; x++) {
-        newField[y][x] = this.getNewStateForPoint(field, x, y);
+        const newState = this.getNewStateForPoint(field, x, y);
+        newField[y][x] = newState;
+
+        if (newState === SUSCEPTIBLE) s++;
+        else if (newState === INFECTED) i++;
+        else if (newState === REMOVED) r++;
 
         if (newField[y][x] !== field[y][x]) this.paintRect(x, y, newField, canvasContext);
       }
     }
 
-    return newField;
+    // normalize
+    const sum = s + i + r;
+    s /= sum;
+    i /= sum;
+    r /= sum;
+
+    return [newField, s, i, r];
   };
 
   tick = () => {
     let context = this.getCanvasContext();
 
     let startTime = new Date().getTime();
-    field = this.evolve(field, context);
+    const [fieldTmp, s, i, r] = this.evolve(field, context);
+    field = fieldTmp;
     console.log(`time for evolution: ${new Date().getTime() - startTime} ms`);
+    return [s, i, r];
   };
 
   addSeed = (x, y) => {

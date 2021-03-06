@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="343f9ad1-8a44-48f3-b3c7-88e46b3564bc" name="Default Changelist" comment="add cname record to public directory">
+    <list default="true" id="343f9ad1-8a44-48f3-b3c7-88e46b3564bc" name="Default Changelist" comment="update text">
+      <change afterPath="$PROJECT_DIR$/src/ChartView.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ControlPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControlPanel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HelpCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/HelpCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VisualizationField.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/VisualizationField.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +35,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -61,7 +65,8 @@
       <workItem from="1612710332794" duration="13545000" />
       <workItem from="1612764545512" duration="27000" />
       <workItem from="1612764642156" duration="7000" />
-      <workItem from="1615044069025" duration="833000" />
+      <workItem from="1615044069025" duration="5074000" />
+      <workItem from="1615049601135" duration="1696000" />
     </task>
     <task id="LOCAL-00001" summary="render dummy visualization with zoom">
       <created>1612717165150</created>
@@ -126,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615045250978</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="update text">
+      <created>1615045426261</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1615045426261</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,17 +165,7 @@
     <MESSAGE value="add legend" />
     <MESSAGE value="update README.md" />
     <MESSAGE value="add cname record to public directory" />
-    <option name="LAST_COMMIT_MESSAGE" value="add cname record to public directory" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/ControlPanel.js</url>
-          <line>33</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="update text" />
+    <option name="LAST_COMMIT_MESSAGE" value="update text" />
   </component>
 </project>
