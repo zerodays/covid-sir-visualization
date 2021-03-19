@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="343f9ad1-8a44-48f3-b3c7-88e46b3564bc" name="Default Changelist" comment="update text">
-      <change afterPath="$PROJECT_DIR$/src/ChartView.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VisualizationField.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/VisualizationField.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChartView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChartView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ControlPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControlPanel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HelpCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/HelpCard.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +67,7 @@
       <workItem from="1612764642156" duration="7000" />
       <workItem from="1615044069025" duration="5074000" />
       <workItem from="1615049601135" duration="1696000" />
+      <workItem from="1616165608672" duration="1747000" />
     </task>
     <task id="LOCAL-00001" summary="render dummy visualization with zoom">
       <created>1612717165150</created>

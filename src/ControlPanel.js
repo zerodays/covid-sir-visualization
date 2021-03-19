@@ -20,13 +20,13 @@ class ControlPanel extends Component {
         <Grid container direction='row' justify='center' spacing={1}>
           <Grid item xs={12}>
             <Typography variant='subtitle2'>
-              Control panel <span className={classes.day}>Day {this.props.day}</span>
+              Nadzorna plošča <span className={classes.day}>Dan {this.props.day}</span>
             </Typography>
           </Grid>
           <Grid item xs={12}/>
           <Grid item xs={12}>
             <Typography variant='body2'>
-              β <small> - probability of being infected after a contact with an infectious individual</small>
+              β <small> - verjetnost, da se posameznik okuži po enodnevnem kontaku z okuženim</small>
             </Typography>
             <Box pt={4}>
               <Slider
@@ -42,7 +42,7 @@ class ControlPanel extends Component {
           <Grid item xs={12}/>
           <Grid item xs={12}>
             <Typography variant='body2'>
-              γ <small> - probability of being "removed" (either dying or becoming non-susceptible)</small>
+              γ <small> - verjetnost, da posameznik na nek dan ozdravi</small>
             </Typography>
             <Box pt={4}>
               <Slider
@@ -58,7 +58,7 @@ class ControlPanel extends Component {
           <Grid item xs={12}/>
           <Grid item>
             <Button size='small' variant='raised' onClick={this.props.onReset} color='secondary'>
-              Reset simulation
+              Ponastavi simulacijo
             </Button>
           </Grid>
         </Grid>

@@ -20,7 +20,7 @@ const styles = theme => ({
     maxHeight: 20,
     transition: 'max-height 300ms ease-out',
     '&:hover': {
-      maxHeight: 490,
+      maxHeight: 512,
     },
   },
   legend: {
@@ -44,50 +44,48 @@ class HelpCard extends Component {
         <Grid container direction='row' spacing={1}>
           <Grid item xs={12}>
             <Typography variant='subtitle2'>
-              Help
+              Pomoč
             </Typography>
           </Grid>
           <Grid item xs={12}>
             <Typography variant='caption'>
-              This is a simplified discrete representation of the epidemiological (local) <a
-              href={'https://en.m.wikipedia.org/wiki/Compartmental_models_in_epidemiology#The_SIR_model'}>SIR model</a>.
+              Preprosta simulacija lokalnega (epidemiološkega) <a
+              href={'https://en.m.wikipedia.org/wiki/Compartmental_models_in_epidemiology#The_SIR_model'}>SIR modela</a>.
             </Typography>
           </Grid>
           <Grid item xs={12}>
             <Typography variant='subtitle2'>
-              Navigation
+              Navigacija
             </Typography>
             <Typography variant='caption'>
               <ul>
-                <li>Press <span className={classes.key}>Enter</span> to move to the next day. First infection will
-                  appear in the center of the screen on <b>day 1</b>.
+                <li>Pritisnite tipko <span className={classes.key}>Enter</span> za simulacijo prehoda na naslednji dan. Prvi okuženi se bo pokazal na sredini zaslona na <b>1. dan</b>.
                 </li>
-                <li><span className={classes.key}>Scroll</span> to zoom in and out of the visualization.</li>
-                <li>Use <b>control panel on the right</b> to adjust simulation parameters.</li>
-                <li>Hover over the <b>graph icon in the left bottom conner</b> to view number of
-                  susceptible/infected/removed individuals over time.
+                <li>Uporabite <span className={classes.key}>"scroll"</span> na mišlki za povečanje ali zmanjšanje vidnega polja.</li>
+                <li>Parametre simulacije lahko upravljate s <b>kontrolno ploščo na desni strani zaslona</b>.</li>
+                <li>Podatki na gafu <b>spodaj levo</b> se posodobijo vsakih 21 dni simulacije.
                 </li>
               </ul>
             </Typography>
           </Grid>
           <Grid item xs={12}>
             <Typography variant='subtitle2'>
-              Legend
+              Legenda
             </Typography>
           </Grid>
           <Grid item xs={12}>
             <Typography variant='caption'>
-              <span className={classes.legend} style={{backgroundColor: this.props.susceptibleColor}}/>Susceptible individuals.
+              <span className={classes.legend} style={{backgroundColor: this.props.susceptibleColor}}/>S (susceptible) dovzetni posamezniki.
             </Typography>
           </Grid>
           <Grid item xs={12}>
             <Typography variant='caption'>
-              <span className={classes.legend} style={{backgroundColor: this.props.infectedColor}}/>Infected individuals.
+              <span className={classes.legend} style={{backgroundColor: this.props.infectedColor}}/>I (infected) okuženi posamezniki.
             </Typography>
           </Grid>
           <Grid item xs={12}>
             <Typography variant='caption'>
-              <span className={classes.legend} style={{backgroundColor: this.props.removedColor}}/>Removed (deceased or immune) individuals.
+              <span className={classes.legend} style={{backgroundColor: this.props.removedColor}}/>R (removed) odstranjeni oz. imuni posamezniki.
             </Typography>
           </Grid>
         </Grid>

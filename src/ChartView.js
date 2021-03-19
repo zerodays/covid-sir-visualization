@@ -12,7 +12,7 @@ const REMOVED_COLOR = colors.blue[400];
 const options = {
   colors: [SUSCEPTIBLE_COLOR, INFECTED_COLOR, REMOVED_COLOR],
   title: {
-    text: 'SIR relative values (refreshed every 21 days)',
+    text: 'SIR vrednosti (osvežene vsakih 21 dni)',
   },
   animations: {
     enabled: false,
@@ -30,7 +30,7 @@ const options = {
     type: 'number',
     tickAmount: 8,
     labels: {
-      formatter: value => `Day ${value * 21}`,
+      formatter: value => `Dan ${value * 21}`,
     },
   },
   yaxis: {
@@ -39,7 +39,7 @@ const options = {
     },
   },
   tooltip: {
-    title: 'Day',
+    title: 'Dan',
   },
   markers: {
     size: 0,
@@ -54,13 +54,13 @@ class ChartView extends Component {
           width={512}
           options={options}
           series={[{
-            name: 'Susceptible',
+            name: 'S - dovzetni',
             data: this.props.dataS,
           }, {
-            name: 'Infected',
+            name: 'I - okuženi',
             data: this.props.dataI,
           }, {
-            name: 'Removed',
+            name: 'R - imuni',
             data: this.props.dataR,
           }]}/>
       </Box>
