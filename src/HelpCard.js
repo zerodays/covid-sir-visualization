@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 const styles = theme => ({
   root: {
-    maxWidth: 256,
+    maxWidth: 360,
   },
   key: {
     backgroundColor: grey[300],
@@ -59,11 +59,11 @@ class HelpCard extends Component {
             </Typography>
             <Typography variant='caption'>
               <ul>
-                <li>Pritisnite tipko <span className={classes.key}>Enter</span> za simulacijo prehoda na naslednji dan. Prvi okuženi se bo pokazal na sredini zaslona na <b>1. dan</b>.
+                <li>Pritisnite tipko <span className={classes.key}>Enter</span> za simulacijo prehoda na naslednji dan. Prvi okuženi posameznik se bo pokazal na sredini zaslona na <b>1. dan</b>.
                 </li>
-                <li>Uporabite <span className={classes.key}>"scroll"</span> na mišlki za povečanje ali zmanjšanje vidnega polja.</li>
+                <li>Uporabite kolesce na miški (<span className={classes.key}>scroll</span>) za povečanje ali pomanjšanje vidnega polja.</li>
                 <li>Parametre simulacije lahko upravljate s <b>kontrolno ploščo na desni strani zaslona</b>.</li>
-                <li>Podatki na gafu <b>spodaj levo</b> se posodobijo vsakih 21 dni simulacije.
+                <li>Podatki na grafu <b>spodaj levo</b> se posodobijo vsakih 21 dni simulacije.
                 </li>
               </ul>
             </Typography>
@@ -75,17 +75,17 @@ class HelpCard extends Component {
           </Grid>
           <Grid item xs={12}>
             <Typography variant='caption'>
-              <span className={classes.legend} style={{backgroundColor: this.props.susceptibleColor}}/>S (susceptible) dovzetni posamezniki.
+              <span className={classes.legend} style={{backgroundColor: this.props.susceptibleColor}}/>S (susceptible) - dovzetni posamezniki.
             </Typography>
           </Grid>
           <Grid item xs={12}>
             <Typography variant='caption'>
-              <span className={classes.legend} style={{backgroundColor: this.props.infectedColor}}/>I (infected) okuženi posamezniki.
+              <span className={classes.legend} style={{backgroundColor: this.props.infectedColor}}/>I (infected) - okuženi posamezniki.
             </Typography>
           </Grid>
           <Grid item xs={12}>
             <Typography variant='caption'>
-              <span className={classes.legend} style={{backgroundColor: this.props.removedColor}}/>R (removed) odstranjeni oz. imuni posamezniki.
+              <span className={classes.legend} style={{backgroundColor: this.props.removedColor}}/>R (recovered) - odstranjeni oz. imuni posamezniki.
             </Typography>
           </Grid>
         </Grid>

@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { withStyles } from '@material-ui/core';
+import { Typography, Card, Box, withStyles } from '@material-ui/core';
 import { colors } from '@material-ui/core';
 import VisualizationField from './VisualizationField';
 import HelpCard from './HelpCard';
 import ControlPanel from './ControlPanel';
 import ChartView from './ChartView';
-import { grey } from '@material-ui/core/colors';
 
 const RECT_SIZE = 3;
 const SUSCEPTIBLE_COLOR = colors.grey[200];
@@ -49,6 +48,17 @@ const styles = theme => ({
     left: 16,
     bottom: 16,
     opacity: 0.6,
+    transition: 'opacity 200ms ease-in-out',
+    '&:hover': {
+      opacity: 1,
+    },
+  },
+  madeByRoot: {
+    position: 'absolute',
+    right: 16,
+    bottom: 16,
+    opacity: 0.6,
+    maxWidth: 380,
     transition: 'opacity 200ms ease-in-out',
     '&:hover': {
       opacity: 1,
@@ -141,6 +151,19 @@ class App extends Component {
     }, this.fieldRef.current.reset);
   };
 
+  getMadeByWidget = () => {
+    const {classes} = this.props;
+    return <div className={classes.madeByRoot}>
+      <Card>
+        <Box px={2} py={1}>
+          <Typography style={{fontSize: 14}}>
+            Vizualizacijo lokalnega SIR modela je za izobraževalne namene ustvarila ekipa <a rel={'noopener noreferrer'} target='_blank' href={'https://zerodays.dev'}>Zerodays</a>.
+          </Typography>
+        </Box>
+      </Card>
+    </div>;
+  };
+
   render() {
     const {classes} = this.props;
 
@@ -187,6 +210,7 @@ class App extends Component {
                    dataR={this.state.dataR}
         />
       </div>
+      {this.getMadeByWidget()}
     </div>;
   }
 }

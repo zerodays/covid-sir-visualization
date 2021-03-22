@@ -42,7 +42,7 @@ class ControlPanel extends Component {
           <Grid item xs={12}/>
           <Grid item xs={12}>
             <Typography variant='body2'>
-              γ <small> - verjetnost, da posameznik na nek dan ozdravi</small>
+              γ <small> - verjetnost, da posameznik na določen dan ozdravi</small>
             </Typography>
             <Box pt={4}>
               <Slider
